@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Create Zen App",
@@ -25,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen w-screen">
-        <main className="dark flex-grow">{children}</main>
+        <Providers>
+          <main className="dark flex-grow">{children}</main>
+        </Providers>
       </body>
     </html>
   );
